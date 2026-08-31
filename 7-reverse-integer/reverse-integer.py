@@ -12,7 +12,6 @@ class Solution:
             digit = x % 10
             x //= 10
 
-            # Check overflow before adding digit
             if rev > (INT_MAX - digit) // 10:
                 return 0
 
