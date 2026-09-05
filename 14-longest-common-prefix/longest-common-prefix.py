@@ -1,14 +1,13 @@
 class Solution:
     def longestCommonPrefix(self, strs):
 
-        prefix = strs[0]
+        for i in range(len(strs[0])):
 
-        for word in strs[1:]:
+            char = strs[0][i]
 
-            while not word.startswith(prefix):
-                prefix = prefix[:-1]
+            for word in strs[1:]:
 
-            if prefix == "":
-                return ""
+                if i >= len(word) or word[i] != char:
+                    return strs[0][:i]
 
-        return prefix
+        return strs[0]
