@@ -6,13 +6,13 @@ class Solution:
 
         for i in range(n - 3):
 
-            # Skip duplicate first numbers
+            # Skip duplicates
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
 
             for j in range(i + 1, n - 2):
 
-                # Skip duplicate second numbers
+                # Skip duplicates
                 if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
 
@@ -30,10 +30,11 @@ class Solution:
                             nums[right]
                         ])
 
-                        # Skip duplicates
+                        # Skip duplicate left values
                         while left < right and nums[left] == nums[left + 1]:
                             left += 1
 
+                        # Skip duplicate right values
                         while left < right and nums[right] == nums[right - 1]:
                             right -= 1
 
